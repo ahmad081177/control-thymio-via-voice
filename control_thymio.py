@@ -1,10 +1,13 @@
 import queue
-import sounddevice as sd
-from vosk import Model, KaldiRecognizer
 import sys
 import json
 
+import sounddevice as sd
+from vosk import Model, KaldiRecognizer
+
+
 from thymio import Thymio
+_thymio = None
 
 def init_thymio():
     print('To create new Thymio interface')
@@ -21,8 +24,6 @@ def init_thymio():
     except Exception as ex :
         print(str(ex))
         return None
-
-_thymio = None
 
 ## Download Model(s) from https://alphacephei.com/vosk/models
 MODEL_FOLDER=r".\vosk\models\vosk-model-en-us-0.22-lgraph"
