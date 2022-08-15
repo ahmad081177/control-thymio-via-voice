@@ -1,4 +1,5 @@
 #TDM client library for Thymio. 
+from os import ST_APPEND
 from tdmclient import ClientAsync
 # aw is to run async calls to the robot.
 from tdmclient import aw
@@ -9,14 +10,15 @@ class Thymio:
     Utilizes the tdmclient library to call the robot commands."""
 
     #constants for the Thymio's max and min speed
-    MAX_SPEED = 90
-    MIN_SPEED = 40
+    MAX_SPEED = 450
+    MIN_SPEED = 50
+    SPEED_STEP = 50
     #Constructor
     def __init__(self):
         #Used to determine if the robot is moving forward (1) or backward (-1) or not (0)
         self.__isfwd = 0
         #The current speed of the robot
-        self.__speed = 50
+        self.__speed = 150
         #Reference to the node of the robot
         self.__node = None
         #Reference to the client
@@ -161,8 +163,8 @@ class Thymio:
         if self.__any_a_in_b__(cmd,self.__cmd_map['speed'])==True:
             #If robot is already moving, do speed up
             if self.is_moving:
-                #speed up the robot by 20
-                self.__speed += 20
+                #speed up the robot by STEP_SPEED
+                self.__speed += Thymio.STEP_SPEED
                 #Make sure the speed is not greater than MAX_SPEED
                 self.__speed = min(Thymio.MAX_SPEED, self.__speed)
                 #keep moving fwd/back
@@ -173,8 +175,8 @@ class Thymio:
         elif self.__any_a_in_b__(cmd,self.__cmd_map['slow'])==True:
             #If robot is already moving, do slow down
             if self.is_moving:
-                #slow down the robot by 20
-                self.__speed -= 20
+                #slow down the robot by STEP_SPEED
+                self.__speed -= Thymio.STEP_SPEED
                 #Make sure the speed is not less than MIN_SPEED
                 self.__speed = max(Thymio.MIN_SPEED, self.__speed)
                 #keep moving fwd/back
