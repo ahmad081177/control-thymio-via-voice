@@ -16,9 +16,10 @@ First, let’s have some base knowledge on the pieces of the proof of the concep
   * Or: in your shell type: (thymio) c:\work\thymio> git clone https://github.com/ahmad081177/control-thymio-via-voice src
   * Download your desired VOSK model from: https://alphacephei.com/vosk/models to your local disk, say: c:\work\thymio\src\control-thymio-via-voice\vosk\models
   * Modify MODEL_FOLDER constant in control_thymio.py to reference the new model folder (from previous step)
+  
 * Run the software:
   * In your shell, type: (thymio) c:\work\thymio\src\control-thymio-via-voice>python control_thymio.py
 
-### For more details, refer to: Control Thymio Robot via Voice Commands.docx
+### For more details, refer to the [documentation](Control%20Thymio%20Robot%20via%20Voice%20Commands.docx)
 
 ### Video at: https://youtu.be/3wKyVvp2RC0
