@@ -10,7 +10,7 @@ First, let’s have some base knowledge on the pieces of the proof of the concep
 * Install the Thymio Suite from https://www.thymio.org/download-thymio-suite/
 * Prepare new python environment:
   * In your command shell, run: python -m venv c:\work\thymio
-  * Actibvate the environment by typing in the command shell: c:\work\thymio\Scripts\Activate.bat
+  * Activate the environment by typing in the command shell: c:\work\thymio\Scripts\Activate.bat
   * Install required libraries by typing in the command shell: (thymio) c:\work\thymio> pip install vosk sounddevice tdmclient
   * Either download this repository to your local disk, say, c:\work\thymio\src\control-thymio-via-voice
   * Or: in your shell type: (thymio) c:\work\thymio> git clone https://github.com/ahmad081177/control-thymio-via-voice src

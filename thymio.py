@@ -163,8 +163,8 @@ class Thymio:
         if self.__any_a_in_b__(cmd,self.__cmd_map['speed'])==True:
             #If robot is already moving, do speed up
             if self.is_moving:
-                #speed up the robot by STEP_SPEED
-                self.__speed += Thymio.STEP_SPEED
+                #speed up the robot by SPEED_STEP
+                self.__speed += Thymio.SPEED_STEP
                 #Make sure the speed is not greater than MAX_SPEED
                 self.__speed = min(Thymio.MAX_SPEED, self.__speed)
                 #keep moving fwd/back
@@ -175,8 +175,8 @@ class Thymio:
         elif self.__any_a_in_b__(cmd,self.__cmd_map['slow'])==True:
             #If robot is already moving, do slow down
             if self.is_moving:
-                #slow down the robot by STEP_SPEED
-                self.__speed -= Thymio.STEP_SPEED
+                #slow down the robot by SPEED_STEP
+                self.__speed -= Thymio.SPEED_STEP
                 #Make sure the speed is not less than MIN_SPEED
                 self.__speed = max(Thymio.MIN_SPEED, self.__speed)
                 #keep moving fwd/back
